@@ -6,12 +6,5 @@
        <div id="content"></div>
        <svg width="960" height="500"></svg>
 </body>
-<script>
-    d3.csv("data/city_temperature_short.csv", function(data) {
-        data.forEach(element => {
-            d3.select("body").append("p")
-            .text(element["Country"] + " jere");
-        });
-    });
-</script>
+<script src="index.js"></script>
 </html>

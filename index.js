@@ -1,6 +1,6 @@
-import { select } from d3;
-
-const svg = select('svg');
-const width = +svg.attr("width");
-const height = +svg.attr("Height");
-
+d3.csv("data/city_temperature_short.csv", function(data) {
+    data.forEach(element => {
+        d3.select("body").append("p")
+        .text(element["Country"] + " jere");
+    });
+});
