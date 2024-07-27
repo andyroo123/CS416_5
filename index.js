@@ -38,6 +38,29 @@ function update() {
                     .data(countries.features)
                     .enter().append('path')
                         .attr("class", "country")
+                        .attr("fill", function (d) {
+                            var year = document.getElementById("yearRange").value;
+                            var month = parseInt(document.getElementById("monthRange").value) + 1;
+                            var temp = countryTemp[countryName[d.id] + year + month];
+                            if (temp) {
+                                var val = temp / (TEMP_MAX - TEMP_MIN);
+                                if (temp == TEMP_NULL) {
+                                    return "black";
+                                }
+                                else if (val <= .50) { // Blue - Yellow
+                                    val =  255 * (val * 2);
+                                    return "rgb("+val+","+val+","+(255-val)+")";
+                                }
+                                else { // Yellow - Red
+                                    val = 255 * (val / 2);
+                                    return "rgb(255,"+val+",0)"
+                                }
+                                return "rgb(0, 0, 0)";
+                            }
+                            else {
+                                return "black";
+                            }
+                        })
                         .attr("d", pathGenerator)
                     .append("title")
                         .attr("class", "country_title")
