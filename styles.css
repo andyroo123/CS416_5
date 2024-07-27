@@ -1,6 +1,13 @@
 body {
     margin: 0px;
-    overflow: hidden;
+}
+
+svg {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    outline: auto;
+    width: 60%;
 }
 
 .sphere {
