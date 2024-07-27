@@ -16,3 +16,59 @@ body {
 .country:hover {
     fill: red;
 }
+
+.all-slider-containter {
+    list-style: none;
+    width: 100%;
+}
+
+.slider-container {
+    float: left;
+    width: 30%;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.value-container {
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+#year-slider-value {
+    color: purple;
+    font-size: 30px;
+    font-family: "Oswald", sans-serif;
+}
+
+#month-slider-value {
+    color: purple;
+    font-size: 30px;
+    font-family: "Oswald", sans-serif;
+}
+
+.slider {
+    width: 70%;
+    background: linear-gradient(to right, #6b8dff 0%, #ff2a5f 0% #fff 0%, #fff 100%);
+    height: 20px;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+    border-radius: 25px;
+    box-shadow: 2px 8px 13px -3px rgba(116, 114, 1134, 0.75);
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(116, 114, 1134, 0.75);
+    -moz-box-shadow: 2px 8px 13px -3px rgba(116, 114, 1134, 0.75);
+}
+
+.slider::-webkit-slider-thumb {
+    cursor: pointer;
+    appearance: none;
+    height: 35px;
+    width: 35px;
+    background-color: #ff2a5f;
+    border-radius: 50%;
+    border: 7px  solid rgb(225, 255, 255);
+    box-shadow: 2px 8px 13px -3px rgba(116, 114, 1134, 0.75);
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(116, 114, 1134, 0.75);
+    -moz-box-shadow: 2px 8px 13px -3px rgba(116, 114, 1134, 0.75);
+}
