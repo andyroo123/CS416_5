@@ -45,7 +45,7 @@ function update() {
                             if (temp) {
                                 var val = temp / (TEMP_MAX - TEMP_MIN);
                                 if (temp == TEMP_NULL) {
-                                    return "black";
+                                    return "rgb(27, 27, 27)";
                                 }
                                 else if (val <= .50) { // Blue - Yellow
                                     val =  255 * (val * 2);
@@ -58,7 +58,7 @@ function update() {
                                 return "rgb(0, 0, 0)";
                             }
                             else {
-                                return "black";
+                                return "rgb(27, 27, 27)";
                             }
                         })
                         .attr("d", pathGenerator)
@@ -69,10 +69,11 @@ function update() {
                             var month = parseInt(document.getElementById("monthRange").value) + 1;
                             var temp = countryTemp[countryName[d.id] + year + month];
                             if (temp) {
+                                if (temp == -99) { return countryName[d.id] + "\nAvgTemp: None" }
                                 return countryName[d.id] + "\nAvgTemp: " + temp;
                             }
                             else {
-                                return countryName[d.id] + " none";
+                                return countryName[d.id] + "\nAvgTemp: None";
                             }
                         });
             });
